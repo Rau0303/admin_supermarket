@@ -1,6 +1,7 @@
 import 'package:admin_supermarket/models/order.dart';
 import 'package:admin_supermarket/models/product.dart';
 import 'package:admin_supermarket/models/users.dart';
+import 'package:uuid/uuid.dart';
 
 class Admin extends Users{
   late List<Product> products;
@@ -9,7 +10,7 @@ class Admin extends Users{
 
 
   Admin({
-    required super.Id,
+    required super.Id ,
     required super.name,
     required super.phoneNumber,
     required this.products,
@@ -26,6 +27,8 @@ class Admin extends Users{
       'Orders': orders.map((order) => order.toJson()).toList(),
     };
   }
+
+
 
 
 //Метод создания объекта из json

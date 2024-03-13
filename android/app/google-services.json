@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "803538989154",
+    "project_id": "supermarket-erken",
+    "storage_bucket": "supermarket-erken.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803538989154:android:cdde77984bceb2d9e1a13b",
+        "android_client_info": {
+          "package_name": "com.example.admin_supermarket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-Q7NU_XkYqbertXTp3vMAc-A5b266sHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
