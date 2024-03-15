@@ -1,13 +1,11 @@
 import 'package:admin_supermarket/models/order.dart';
 import 'package:admin_supermarket/models/product.dart';
 import 'package:admin_supermarket/models/users.dart';
-import 'package:uuid/uuid.dart';
+
 
 class Admin extends Users{
   late List<Product> products;
   late List<Order> orders;
-
-
 
   Admin({
     required super.Id ,
