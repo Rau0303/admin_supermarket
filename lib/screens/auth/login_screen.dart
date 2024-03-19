@@ -149,7 +149,14 @@ class LoginScreen extends StatelessWidget {
                       child: IconButton(
                           onPressed: loginForPhone,
                           icon: Icon(Icons.phone_android,size: 50,),),
-                    )
+                    ),
+                    Positioned(
+                      top: screenSize.height * 0.6,
+                      left: screenSize.width * 0.03,
+                      right: screenSize.width * 0.03,
+                      child: Text("Rauan"),),
+
+
 
 
 
