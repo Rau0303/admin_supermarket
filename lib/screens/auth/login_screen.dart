@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+
+import '../../widgets/passwordTextField_widget.dart';
+import '../../widgets/saveButton_widget.dart';
+import '../../widgets/usernameTextField_widget.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
@@ -8,6 +12,12 @@ class LoginScreen extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     TextEditingController _usernameController = TextEditingController();
     TextEditingController _passwordController = TextEditingController();
+
+    void login(){}
+
+    void register(){}
+
+    void loginForPhone(){}
 
     return Scaffold(
       body: Stack(
@@ -26,9 +36,9 @@ class LoginScreen extends StatelessWidget {
             left: 0,
             right: 0,
             child: Image.asset(
-              'assets/logoAdmin.jpg', // замените путь на путь к вашему логотипу
-              width: 100, // задайте нужную ширину логотипа
-              height: 100, // задайте нужную высоту логотипа
+              'assets/logoAdmin.jpg',
+              width: 100,
+              height: 100,
             ),
           ),
 
@@ -48,67 +58,39 @@ class LoginScreen extends StatelessWidget {
 
                     Positioned(
                       top: screenSize.height * 0.05,
-                      left: screenSize.width * 0.38,
-                      child: Text("Вход",
-                      style: textTheme.displayMedium
+                      left: 0,
+                      right: 0,
+                      child: Text(
+                        "Вход",
+                        style: textTheme.displayMedium,
+                        textAlign: TextAlign.center,
                       ),
                     ),
+
 
                     Positioned(
                       top: screenSize.height * 0.2,
                       left: screenSize.width * 0.03,
                       right: screenSize.width * 0.03,
-                      child: TextFormField(
-                        controller: _usernameController,
-                        textInputAction: TextInputAction.next,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          hintText: "email",
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          )
-                        ),
-                      ),
+                      child: UsernameTextField_widget(usernameController: _usernameController),
                     ),
 
                     Positioned(
                       top: screenSize.height * 0.28,
                       left: screenSize.width * 0.03,
                       right: screenSize.width * 0.03,
-                      child: TextFormField(
-                        controller: _passwordController,
-                        textInputAction: TextInputAction.done,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          hintText: "password",
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          )
-                        ),
-                      ),
+                      child: PasswordTextField_widget(passwordController: _passwordController, hintText: 'Введите пароль',),
                     ),
+
+
                     Positioned(
                       top: screenSize.height * 0.4,
                       left: screenSize.width * 0.03,
                       right: screenSize.width * 0.03,
-                      child: SizedBox(
-                        height: screenSize.height * 0.07,
-                        child: ElevatedButton(
-                            onPressed: (){},
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      bottomLeft: Radius.circular(10),
-                                      bottomRight: Radius.circular(10),
-                                    ),)
-                                ),
-                            ),
-                            child: Text("Войти",style: textTheme.bodyMedium,)),
-                      ),
+                      child: SaveButton_widget(screenSize: screenSize, textTheme: textTheme, onPressed: () {  }, text: 'Войти',),
                     ),
+
+
                      Positioned(
                        top: screenSize.height * 0.47,
                        left: screenSize.width * 0.03,
@@ -123,6 +105,8 @@ class LoginScreen extends StatelessWidget {
                         ],
                     ),
                      ),
+
+
 
                     Positioned(
                       top: screenSize.height * 0.55,
@@ -153,6 +137,8 @@ class LoginScreen extends StatelessWidget {
 
                     ),
 
+
+
                     Positioned(
                       top: screenSize.height * 0.6,
                       left: screenSize.width * 0.03,
@@ -161,6 +147,9 @@ class LoginScreen extends StatelessWidget {
                           onPressed: (){},
                           icon: Icon(Icons.phone_android,size: 50,),),
                     )
+
+
+
                   ],
                 ),
               ),
@@ -177,3 +166,9 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
