@@ -1,3 +1,4 @@
+import 'package:admin_supermarket/screens/main/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/passwordTextField_widget.dart';
@@ -13,7 +14,9 @@ class LoginScreen extends StatelessWidget {
     TextEditingController _usernameController = TextEditingController();
     TextEditingController _passwordController = TextEditingController();
 
-    void login(){}
+    void login(){
+      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> HomeScreen()));
+    }
 
     void register(){}
 
@@ -87,7 +90,7 @@ class LoginScreen extends StatelessWidget {
                       top: screenSize.height * 0.4,
                       left: screenSize.width * 0.03,
                       right: screenSize.width * 0.03,
-                      child: SaveButton_widget(screenSize: screenSize, textTheme: textTheme, onPressed: () {  }, text: 'Войти',),
+                      child: SaveButton_widget(screenSize: screenSize, textTheme: textTheme, onPressed: login, text: 'Войти',),
                     ),
 
 
@@ -100,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                         children: [
                           Text("нет аккаунта? ",style: textTheme.displaySmall,),
                           TextButton(
-                              onPressed: (){},
+                              onPressed: register,
                               child: Text("Зарегистрироваться!"))
                         ],
                     ),
@@ -144,7 +147,7 @@ class LoginScreen extends StatelessWidget {
                       left: screenSize.width * 0.03,
                       right: screenSize.width * 0.03,
                       child: IconButton(
-                          onPressed: (){},
+                          onPressed: loginForPhone,
                           icon: Icon(Icons.phone_android,size: 50,),),
                     )
 
