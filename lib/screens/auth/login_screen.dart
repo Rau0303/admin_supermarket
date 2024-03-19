@@ -154,7 +154,7 @@ class LoginScreen extends StatelessWidget {
                       top: screenSize.height * 0.6,
                       left: screenSize.width * 0.03,
                       right: screenSize.width * 0.03,
-                      child: Text("Rauan"),),
+                      child: Text("Aldiyar"),),
 
 
 
